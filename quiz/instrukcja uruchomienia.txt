@@ -1,0 +1,84 @@
+
+## ✅ Instrukcja uruchomienia strony z quizem 
+
+## 🔹 Scieżki plików
+
+            
+
+
+### 🔧 Co będzie potrzebne:
+
+* Komputer z systemem Windows / macOS / Linux
+* Przeglądarka internetowa (np. Google Chrome)
+* Program **Visual Studio Code** (lub inny edytor z funkcją "Live Server")
+
+---
+
+### 🔹 Krok 1: Zainstaluj Visual Studio Code
+
+1. Wejdź na stronę: [https://code.visualstudio.com/](https://code.visualstudio.com/)
+2. Kliknij **Download** i pobierz wersję dla swojego systemu operacyjnego.
+3. Zainstaluj program (klikaj "Dalej" aż do zakończenia instalacji).
+
+---
+
+### 🔹 Krok 2: Zainstaluj rozszerzenie "Live Server"
+
+1. Otwórz **Visual Studio Code**
+2. Kliknij w ikonę **rozszerzeń** z lewej strony (🔌 lub `Ctrl+Shift+X`)
+3. Wpisz: `Live Server`
+4. Kliknij **Install** przy rozszerzeniu "Live Server" autorstwa Ritwick Dey
+
+---
+
+### 🔹 Krok 3: Otwórz folder z quizem
+
+1. Kliknij **File → Open Folder...** i wybierz folder, w którym znajdują się pliki strony (np. `index.html`, `style.css`, `data/`)
+2. Upewnij się, że w folderze są przynajmniej:
+    quiz\
+    ├── app.js
+    ├── index.html
+    ├── instrukcja uruchomienia.txt
+    ├── results.html
+    ├── style.css
+    ├── sw.js
+    ├── data\        (📁 folder z pytaniami JSON)
+        ├── egzamin_it.json
+        ├── historia_pl.json
+        ├── prawo_jazdy.json              
+    ├── media\      (📁 folder z obrazkami)
+        ├── egzamin_it\        (📁 obrazki do egzaminu IT)
+        ├── qo1.jpg, qo2.jpg, ..., qo25.jpg
+    
+    ├── historia_pl\       (📁 obrazki do historii Polski)
+        ├── qo1.jpg, qo2.jpg, ..., qo25.jpg
+    
+    ├── prawo_jazdy\       (📁 obrazki do prawa jazdy)
+        ├── qo1.jpg, qo2.jpg, ..., qo25.jpg
+
+---
+
+### 🔹 Krok 4: Uruchom quiz
+
+1. Kliknij prawym przyciskiem myszy na plik `index.html`
+2. Wybierz **"Open with Live Server"**
+3. Otworzy się przeglądarka z quizem gotowym do użycia 🚀
+
+---
+
+### 📌 Uwagi dodatkowe:
+
+* Quiz działa **całkowicie lokalnie** – nie wymaga internetu
+* Wszystkie dane (pytania, obrazki) są zapisane w plikach `.json` i `media/`
+* Wyniki gracza są zapisywane w **przeglądarce** (LocalStorage)
+
+---
+
+### 🟩 Podsumowanie:
+
+| Etap                  | Czynność                                                                    |
+| --------------------- | --------------------------------------------------------------------------- |
+| 1. Visual Studio Code | Zainstaluj ze strony [code.visualstudio.com](https://code.visualstudio.com) |
+| 2. Live Server        | Zainstaluj rozszerzenie w VSC                                               |
+| 3. Folder z quizem    | Otwórz w VSC folder z plikami                                               |
+| 4. Start              | Kliknij PPM na `index.html` → „Open with Live Server”                       |

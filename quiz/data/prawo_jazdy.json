@@ -1,0 +1,231 @@
+{
+  "id": "prawo_jazdy",
+  "title": "Prawo jazdy – test",
+  "questions": [
+    {
+      "q": "Minimalna głębokość bieżnika to:",
+      "A": "1,6 mm",
+      "B": "2,5 mm",
+      "C": "3 mm",
+      "D": "0,8 mm",
+      "correct": "A",
+      "media": { "type": "img", "src": "media/prawo_jazdy/qo1.jpg" }
+    },
+    {
+      "q": "Jakie światła włącza się w mgle za dnia?",
+      "A": "Postojowe",
+      "B": "Dzienne",
+      "C": "Przeciwmgłowe tylne",
+      "D": "Awaryjne",
+      "correct": "C",
+      "media": { "type": "img", "src": "media/prawo_jazdy/qo2.jpg" }
+    },
+    {
+      "q": "Co oznacza czerwone światło na skrzyżowaniu?",
+      "A": "Zwolnij",
+      "B": "Uważaj",
+      "C": "Zatrzymaj się",
+      "D": "Przejedź ostrożnie",
+      "correct": "C",
+      "media": { "type": "img", "src": "media/prawo_jazdy/qo3.jpg" }
+    },
+    {
+      "q": "Jaką prędkość maksymalną dopuszcza się na obszarze zabudowanym w dzień?",
+      "A": "50 km/h",
+      "B": "60 km/h",
+      "C": "40 km/h",
+      "D": "70 km/h",
+      "correct": "A",
+      "media": { "type": "img", "src": "media/prawo_jazdy/qo4.jpg" }
+    },
+    {
+      "q": "Co należy zrobić przed wykonaniem manewru skrętu?",
+      "A": "Włączyć światła awaryjne",
+      "B": "Zatrzymać pojazd",
+      "C": "Upewnić się o możliwości wykonania manewru i zasygnalizować",
+      "D": "Zjechać na pobocze",
+      "correct": "C",
+      "media": { "type": "img", "src": "media/prawo_jazdy/qo5.jpg" }
+    },
+    {
+      "q": "Co to jest ABS?",
+      "A": "Układ wspomagania kierownicy",
+      "B": "System klimatyzacji",
+      "C": "System zapobiegający blokowaniu kół przy hamowaniu",
+      "D": "Rodzaj opon",
+      "correct": "C",
+      "media": { "type": "img", "src": "media/prawo_jazdy/qo6.jpg" }
+    },
+    {
+      "q": "Kiedy wolno wyprzedzać pojazd na przejściu dla pieszych?",
+      "A": "Zawsze",
+      "B": "Gdy piesi nie znajdują się na przejściu",
+      "C": "Gdy sygnalizacja świetlna na to pozwala",
+      "D": "Nigdy",
+      "correct": "D",
+      "media": { "type": "img", "src": "media/prawo_jazdy/qo7.jpg" }
+    },
+    {
+      "q": "Co oznacza znak STOP?",
+      "A": "Zwolnij i rozejrzyj się",
+      "B": "Zatrzymaj się bezwzględnie",
+      "C": "Zachowaj ostrożność",
+      "D": "Daj pierwszeństwo",
+      "correct": "B",
+      "media": { "type": "img", "src": "media/prawo_jazdy/qo8.jpg" }
+    },
+    {
+      "q": "Jak należy zachować się wobec pojazdu uprzywilejowanego?",
+      "A": "Zatrzymać się tylko jeśli jedzie z sygnałem świetlnym",
+      "B": "Zatrzymać się i usunąć z drogi",
+      "C": "Jechać szybciej, by go nie blokować",
+      "D": "Ignorować sygnały",
+      "correct": "B",
+      "media": { "type": "img", "src": "media/prawo_jazdy/qo9.jpg" }
+    },
+    {
+      "q": "Co oznacza żółty sygnał świetlny?",
+      "A": "Zatrzymaj się jeśli możesz",
+      "B": "Przyspiesz",
+      "C": "Jedź bez zmian",
+      "D": "Zawracaj",
+      "correct": "A",
+      "media": { "type": "img", "src": "media/prawo_jazdy/qo10.jpg" }
+    },
+    {
+      "q": "Jaką funkcję pełni sprzęgło w pojeździe?",
+      "A": "Zatrzymuje pojazd",
+      "B": "Włącza światła",
+      "C": "Łączy i rozłącza napęd z silnikiem",
+      "D": "Reguluje prędkość",
+      "correct": "C",
+      "media": { "type": "img", "src": "media/prawo_jazdy/qo11.jpg" }
+    },
+    {
+      "q": "Co powinien zrobić kierowca, gdy zbliża się do ronda?",
+      "A": "Zatrzymać się bezwzględnie",
+      "B": "Ustąpić pierwszeństwa pojazdom znajdującym się na rondzie",
+      "C": "Wjechać bez zatrzymania",
+      "D": "Włączyć światła awaryjne",
+      "correct": "B",
+      "media": { "type": "img", "src": "media/prawo_jazdy/qo12.jpg" }
+    },
+    {
+      "q": "Jakie dokumenty należy mieć przy sobie podczas jazdy?",
+      "A": "Tylko prawo jazdy",
+      "B": "Dowód osobisty",
+      "C": "Prawo jazdy i dowód rejestracyjny",
+      "D": "Tylko dowód rejestracyjny",
+      "correct": "C",
+      "media": { "type": "img", "src": "media/prawo_jazdy/qo13.jpg" }
+    },
+    {
+      "q": "Co oznacza niebieski znak z literą P?",
+      "A": "Zakaz parkowania",
+      "B": "Parking",
+      "C": "Postój chwilowy",
+      "D": "Strefa zamieszkania",
+      "correct": "B",
+      "media": { "type": "img", "src": "media/prawo_jazdy/qo14.jpg" }
+    },
+    {
+      "q": "Jaki wpływ ma alkohol na kierowcę?",
+      "A": "Zwiększa koncentrację",
+      "B": "Nie wpływa na prowadzenie",
+      "C": "Pogarsza refleks i ocenę sytuacji",
+      "D": "Poprawia widoczność w nocy",
+      "correct": "C",
+      "media": { "type": "img", "src": "media/prawo_jazdy/qo15.jpg" }
+    },
+    {
+      "q": "Jaki kolor mają światła cofania?",
+      "A": "Czerwony",
+      "B": "Żółty",
+      "C": "Biały",
+      "D": "Niebieski",
+      "correct": "C",
+      "media": { "type": "img", "src": "media/prawo_jazdy/qo16.jpg" }
+    },
+    {
+      "q": "Na jakiej drodze obowiązuje zakaz wyprzedzania?",
+      "A": "Na autostradzie",
+      "B": "Na drodze z dwoma pasami w jedną stronę",
+      "C": "Na wzniesieniu bez widoczności",
+      "D": "Na rondzie",
+      "correct": "C",
+      "media": { "type": "img", "src": "media/prawo_jazdy/qo17.jpg" }
+    },
+    {
+      "q": "Co oznacza linia ciągła na środku jezdni?",
+      "A": "Można wyprzedzać",
+      "B": "Zakaz zatrzymywania",
+      "C": "Zakaz zmiany pasa",
+      "D": "Zakaz przejeżdżania przez linię",
+      "correct": "D",
+      "media": { "type": "img", "src": "media/prawo_jazdy/qo18.jpg" }
+    },
+    {
+      "q": "Jakiej kategorii prawa jazdy potrzeba do prowadzenia motocykla?",
+      "A": "B",
+      "B": "C",
+      "C": "A",
+      "D": "T",
+      "correct": "C",
+      "media": { "type": "img", "src": "media/prawo_jazdy/qo19.jpg" }
+    },
+    {
+      "q": "Co zrobić w przypadku zbliżania się do przejazdu kolejowego?",
+      "A": "Zatrzymać się tylko, gdy zapory są opuszczone",
+      "B": "Zatrzymać się zawsze przed przejazdem",
+      "C": "Zachować szczególną ostrożność i ewentualnie się zatrzymać",
+      "D": "Przyspieszyć, by zdążyć",
+      "correct": "C",
+      "media": { "type": "img", "src": "media/prawo_jazdy/qo20.jpg" }
+    },
+    {
+      "q": "Jaką funkcję pełnią pasy bezpieczeństwa?",
+      "A": "Dekoracyjną",
+      "B": "Ograniczają ruchy podczas jazdy",
+      "C": "Chronią kierowcę i pasażerów w razie wypadku",
+      "D": "Wymuszone przepisami",
+      "correct": "C",
+      "media": { "type": "img", "src": "media/prawo_jazdy/qo21.jpg" }
+    },
+    {
+      "q": "Co oznacza czerwone światło migające na przejeździe kolejowym?",
+      "A": "Ostrzeżenie",
+      "B": "Zakaz wjazdu",
+      "C": "Można przejechać powoli",
+      "D": "Informacja o nadjeżdżającym autobusie",
+      "correct": "B",
+      "media": { "type": "img", "src": "media/prawo_jazdy/qo22.jpg" }
+    },
+    {
+      "q": "Jakie światła należy włączyć podczas jazdy w tunelu?",
+      "A": "Światła awaryjne",
+      "B": "Światła drogowe",
+      "C": "Światła mijania",
+      "D": "Żadne",
+      "correct": "C",
+      "media": { "type": "img", "src": "media/prawo_jazdy/qo23.jpg" }
+    },
+    {
+      "q": "Jakie jest pierwszeństwo na skrzyżowaniu równorzędnym?",
+      "A": "Pierwszeństwo mają pojazdy z lewej",
+      "B": "Pierwszeństwo mają pojazdy z prawej",
+      "C": "Nie ma zasad",
+      "D": "Pierwszeństwo ma pieszy",
+      "correct": "B",
+      "media": { "type": "img", "src": "media/prawo_jazdy/qo24.jpg" }
+    },
+    {
+      "q": "Jak należy zabezpieczyć pojazd po zaparkowaniu na wzniesieniu?",
+      "A": "Zaciągnąć hamulec ręczny i włączyć pierwszy bieg",
+      "B": "Wyłączyć zapłon",
+      "C": "Zostawić włączone światła drogowe",
+      "D": "Zostawić pojazd na luzie",
+      "correct": "A",
+      "media": { "type": "img", "src": "media/prawo_jazdy/qo25.jpg" }
+    }
+  ]
+}

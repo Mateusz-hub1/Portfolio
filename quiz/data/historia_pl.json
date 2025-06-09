@@ -1,0 +1,231 @@
+{
+  "id": "historia_pl",
+  "title": "Historia Polski – test",
+  "questions": [
+    {
+      "q": "W którym roku odbył się chrzest Polski?",
+      "A": "966",
+      "B": "1025",
+      "C": "1410",
+      "D": "1569",
+      "correct": "A",
+      "media": { "type": "img", "src": "media/historia_pl/qo1.jpg" }
+    },
+    {
+      "q": "Bitwa pod Grunwaldem miała miejsce w:",
+      "A": "1320 r.",
+      "B": "1410 r.",
+      "C": "1493 r.",
+      "D": "1655 r.",
+      "correct": "B",
+      "media": { "type": "img", "src": "media/historia_pl/qo2.jpg" }
+    },
+    {
+      "q": "Kto był pierwszym królem Polski?",
+      "A": "Bolesław Krzywousty",
+      "B": "Kazimierz Wielki",
+      "C": "Bolesław Chrobry",
+      "D": "Mieszko I",
+      "correct": "C",
+      "media": { "type": "img", "src": "media/historia_pl/qo3.jpg" }
+    },
+    {
+      "q": "Kiedy uchwalono Konstytucję 3 maja?",
+      "A": "1789",
+      "B": "1791",
+      "C": "1795",
+      "D": "1807",
+      "correct": "B",
+      "media": { "type": "img", "src": "media/historia_pl/qo4.jpg" }
+    },
+    {
+      "q": "Powstanie styczniowe wybuchło w roku:",
+      "A": "1830",
+      "B": "1848",
+      "C": "1863",
+      "D": "1905",
+      "correct": "C",
+      "media": { "type": "img", "src": "media/historia_pl/qo5.jpg" }
+    },
+    {
+      "q": "Kiedy Polska odzyskała niepodległość?",
+      "A": "1 sierpnia 1944",
+      "B": "15 sierpnia 1920",
+      "C": "11 listopada 1918",
+      "D": "3 maja 1791",
+      "correct": "C",
+      "media": { "type": "img", "src": "media/historia_pl/qo6.jpg" }
+    },
+    {
+      "q": "Kto był naczelnikiem państwa po odzyskaniu niepodległości?",
+      "A": "Władysław Sikorski",
+      "B": "Józef Piłsudski",
+      "C": "Ignacy Paderewski",
+      "D": "Roman Dmowski",
+      "correct": "B",
+      "media": { "type": "img", "src": "media/historia_pl/qo7.jpg" }
+    },
+    {
+      "q": "Unia Lubelska została zawarta w roku:",
+      "A": "1385",
+      "B": "1410",
+      "C": "1569",
+      "D": "1795",
+      "correct": "C",
+      "media": { "type": "img", "src": "media/historia_pl/qo8.jpg" }
+    },
+    {
+      "q": "Kto był ostatnim królem Polski?",
+      "A": "Jan III Sobieski",
+      "B": "Stanisław August Poniatowski",
+      "C": "Władysław IV",
+      "D": "Zygmunt III Waza",
+      "correct": "B",
+      "media": { "type": "img", "src": "media/historia_pl/qo9.jpg" }
+    },
+    {
+      "q": "Która wojna została nazwana potopem szwedzkim?",
+      "A": "1610–1612",
+      "B": "1655–1660",
+      "C": "1700–1721",
+      "D": "1792–1794",
+      "correct": "B",
+      "media": { "type": "img", "src": "media/historia_pl/qo10.jpg" }
+    },
+    {
+      "q": "Co wydarzyło się w 1944 roku w Warszawie?",
+      "A": "Odzyskanie niepodległości",
+      "B": "Bitwa Warszawska",
+      "C": "Powstanie warszawskie",
+      "D": "Wybory czerwcowe",
+      "correct": "C",
+      "media": { "type": "img", "src": "media/historia_pl/qo11.jpg" }
+    },
+    {
+      "q": "Kiedy wybuchła II wojna światowa?",
+      "A": "1 września 1939",
+      "B": "17 września 1939",
+      "C": "3 września 1939",
+      "D": "1 sierpnia 1944",
+      "correct": "A",
+      "media": { "type": "img", "src": "media/historia_pl/qo12.jpg" }
+    },
+    {
+      "q": "Kto podpisał akt kapitulacji Niemiec?",
+      "A": "Adolf Hitler",
+      "B": "Winston Churchill",
+      "C": "Wilhelm Keitel",
+      "D": "Franklin D. Roosevelt",
+      "correct": "C",
+      "media": { "type": "img", "src": "media/historia_pl/qo13.jpg" }
+    },
+    {
+      "q": "W którym roku miały miejsce pierwsze częściowo wolne wybory w PRL?",
+      "A": "1976",
+      "B": "1980",
+      "C": "1989",
+      "D": "1991",
+      "correct": "C",
+      "media": { "type": "img", "src": "media/historia_pl/qo14.jpg" }
+    },
+    {
+      "q": "Solidarność powstała w roku:",
+      "A": "1970",
+      "B": "1976",
+      "C": "1980",
+      "D": "1989",
+      "correct": "C",
+      "media": { "type": "img", "src": "media/historia_pl/qo15.jpg" }
+    },
+    {
+      "q": "Który władca zwyciężył pod Wiedniem w 1683 r.?",
+      "A": "Zygmunt III Waza",
+      "B": "Jan III Sobieski",
+      "C": "Bolesław Chrobry",
+      "D": "Kazimierz Wielki",
+      "correct": "B",
+      "media": { "type": "img", "src": "media/historia_pl/qo16.jpg" }
+    },
+    {
+      "q": "Rozbiór Polski, w którym Polska przestała istnieć, miał miejsce w roku:",
+      "A": "1772",
+      "B": "1793",
+      "C": "1795",
+      "D": "1815",
+      "correct": "C",
+      "media": { "type": "img", "src": "media/historia_pl/qo17.jpg" }
+    },
+    {
+      "q": "W którym roku Polska weszła do Unii Europejskiej?",
+      "A": "1999",
+      "B": "2001",
+      "C": "2004",
+      "D": "2007",
+      "correct": "C",
+      "media": { "type": "img", "src": "media/historia_pl/qo18.jpg" }
+    },
+    {
+      "q": "Kto był pierwszym prezydentem III Rzeczypospolitej?",
+      "A": "Wojciech Jaruzelski",
+      "B": "Lech Wałęsa",
+      "C": "Aleksander Kwaśniewski",
+      "D": "Bronisław Komorowski",
+      "correct": "B",
+      "media": { "type": "img", "src": "media/historia_pl/qo19.jpg" }
+    },
+    {
+      "q": "Czym była Konfederacja Barska?",
+      "A": "Związek kupców",
+      "B": "Związek wojskowy szlachty broniący niezależności Rzeczypospolitej",
+      "C": "Ugrupowanie polityczne",
+      "D": "Zgromadzenie duchowieństwa",
+      "correct": "B",
+      "media": { "type": "img", "src": "media/historia_pl/qo20.jpg" }
+    },
+    {
+      "q": "Jakie było hasło powstania listopadowego?",
+      "A": "Za wolność naszą i waszą",
+      "B": "W jedności siła",
+      "C": "Ojczyzna albo śmierć",
+      "D": "Wolność, równość, braterstwo",
+      "correct": "A",
+      "media": { "type": "img", "src": "media/historia_pl/qo21.jpg" }
+    },
+    {
+      "q": "Kiedy uchwalono pierwszą konstytucję w Europie?",
+      "A": "1791 r.",
+      "B": "1789 r.",
+      "C": "1807 r.",
+      "D": "1776 r.",
+      "correct": "A",
+      "media": { "type": "img", "src": "media/historia_pl/qo22.jpg" }
+    },
+    {
+      "q": "Bitwa pod Cedynią to wydarzenie z czasów:",
+      "A": "Bolesława Chrobrego",
+      "B": "Mieszka I",
+      "C": "Kazimierza Wielkiego",
+      "D": "Władysława Jagiełły",
+      "correct": "B",
+      "media": { "type": "img", "src": "media/historia_pl/qo23.jpg" }
+    },
+    {
+      "q": "Jak nazywała się tajna organizacja wojskowa w okupowanej Polsce?",
+      "A": "AK – Armia Krajowa",
+      "B": "SS",
+      "C": "NKWD",
+      "D": "Gestapo",
+      "correct": "A",
+      "media": { "type": "img", "src": "media/historia_pl/qo24.jpg" }
+    },
+    {
+      "q": "Co wydarzyło się 10 kwietnia 2010 r.?",
+      "A": "Wejście do strefy euro",
+      "B": "Katastrofa w Smoleńsku",
+      "C": "Wprowadzenie stanu wojennego",
+      "D": "Reforma szkolnictwa",
+      "correct": "B",
+      "media": { "type": "img", "src": "media/historia_pl/qo25.jpg" }
+    }
+  ]
+}

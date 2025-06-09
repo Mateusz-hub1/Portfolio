@@ -1,0 +1,193 @@
+<!-- =========================================================
+  IQ° QUIZ – SINGLE‑FILE EDITION 2.0
+  • Dark Mode 💡   • Kołowy Timer 🕒   • Konfetti 🎉
+  Wszystko w jednym HTML-u – wklej, odpal Live Server i graj.
+  👉  Jeśli dodajesz nowe kategorie, dorzuć json do folderu /data
+========================================================= -->
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+<title>Piotr Korcz - quiz </title>
+<!-- Favicon (1×1 transparent) żeby uciszyć 404 → można podmienić -->
+<link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnLz4=" />
+<!-- Font – Inter 400/700 -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+
+</head>
+
+<body>
+<header>
+  <h1 id="logo">Piotr Korcz - quiz </h1>
+  <button id="themeToggle" aria-label="Toggle dark mode">🌙</button>
+</header>
+
+<select id="categorySelect"><option disabled hidden selected>— wybierz kategorię —</option></select>
+
+<section id="quizCard" class="card">
+  <div class="progressWrap"><div id="progress"></div></div>
+  <div id="timerWrap">
+    <svg width="120" height="120"><circle cx="60" cy="60" r="55" stroke="#e4e4e4" stroke-width="8" fill="none"/><circle id="ring" cx="60" cy="60" r="55" stroke="var(--ring)" stroke-width="8" fill="none" stroke-linecap="round" stroke-dasharray="345 345" stroke-dashoffset="0"/></svg>
+    <div id="timeLabel">25:00</div>
+  </div>
+  <h2 id="questionText"></h2>
+  <div id="mediaBox"></div>
+  <ul id="answers"></ul>
+  <nav>
+    <button id="prevBtn">← Poprzednie</button>
+    <button id="nextBtn">Następne →</button>
+    <button id="finishBtn" class="hidden">Zakończ</button>
+  </nav>
+</section>
+
+<div id="overlay" class="modalOverlay">
+  <div class="modal">
+    <h2>Twój wynik</h2>
+    <p id="scoreLine"></p>
+    <p style="margin:1rem 0 1.4rem">👏 Gratulacje!</p>
+
+    <a href="results.html">Zobacz ranking</a>
+  </div>
+</div>
+<div id="confetti"></div>
+
+<script>
+/*****************************************************************/
+/*  🔧 KONFIG                                                    */
+/*****************************************************************/
+const TIMER_LIMIT = 25*60;              // 25 minut w sekundach
+const FILES = ['prawo_jazdy','egzamin_it','historia_pl'];
+
+/*****************************************************************/
+/*  ⚙️  ZMIENNE  */
+/*****************************************************************/
+let categories={}, currentCat, questions=[], idx=0;
+let answers=[], timerId=null, streak=0, bestStreak=0, timeLeft=TIMER_LIMIT;
+
+/*****************************************************************/
+/*  📦  ELEM HELPERS  */
+/*****************************************************************/
+const $=q=>document.querySelector(q);
+const selCat=$('#categorySelect'), card=$('#quizCard');
+const qTxt=$('#questionText'), aBox=$('#answers');
+const ring=$('#ring'), timeLbl=$('#timeLabel'), prog=$('#progress');
+const prevB=$('#prevBtn'), nextB=$('#nextBtn'), finB=$('#finishBtn');
+const overlay=$('#overlay'), scoreL=$('#scoreLine');
+const themeToggle=$('#themeToggle');
+
+/*****************************************************************/
+/*  🚀 INIT  */
+/*****************************************************************/
+(async()=>{
+  try{
+    for(const f of FILES){
+      const data=await fetch(`data/${f}.json`).then(r=>r.json());
+      categories[data.id]=data;
+      selCat.append(new Option(data.title,data.id));
+    }
+    selCat.onchange=startQuiz;
+  }catch(e){alert('Nie można wczytać plików JSON. Sprawdź ścieżki i składnię.');console.error(e);}
+})();
+
+/* Motyw */
+if(matchMedia('(prefers-color-scheme: dark)').matches)toggleTheme(true);
+themeToggle.onclick=()=>toggleTheme();
+
+/*****************************************************************/
+/*  ▶️ START  */
+/*****************************************************************/
+function startQuiz(){
+  currentCat=categories[selCat.value];
+  questions=shuffle([...currentCat.questions]);
+  answers=Array(questions.length).fill(null);
+  idx=streak=bestStreak=0; timeLeft=TIMER_LIMIT;
+  render(); card.style.display='flex'; clearInterval(timerId);
+  timerId=setInterval(tick,1000);
+}
+
+/*****************************************************************/
+/*  🔄 RENDER  */
+/*****************************************************************/
+function render(){
+  const Q=questions[idx]; qTxt.textContent=Q.q;
+  /* media */
+  const mBox=$('#mediaBox'); mBox.innerHTML='';
+  if(Q.media){
+    const el=Q.media.type==='img'?new Image():document.createElement('video');   
+    if (Q.media.type === 'img') {
+      el.classList.add('question-image');  
+    } else {
+      el.controls = true;
+      el.width    = 480;
+    }
+    el.src=Q.media.src; if(el.tagName==='VIDEO')el.controls=true;
+    if(el.tagName==='VIDEO')el.width=480; mBox.append(el);
+  }
+  /* answers */
+aBox.innerHTML = '';
+for (const k of ['A', 'B', 'C', 'D']) {
+  const li = document.createElement('li');
+  li.dataset.k = k;
+  li.textContent = `${k}. ${Q[k]}`;
+  li.onclick = () => choose(k);
+
+  if (answers[idx] !== null) {
+    if (answers[idx] === k) {
+      li.classList.add(k === Q.correct ? 'correct' : 'wrong');
+    } else if (k === Q.correct) {
+      li.classList.add('correct');
+    }
+  }
+
+  aBox.append(li);
+}
+
+  /* nav + progress */
+  prevB.disabled=idx===0; nextB.disabled=idx===questions.length-1;
+  finB.classList.toggle('hidden',idx!==questions.length-1);
+  prog.style.width=`${(idx+1)/questions.length*100}%`;
+}
+
+/*****************************************************************/
+/*  ✅ CHOICE  */
+/*****************************************************************/
+function choose(k){answers[idx]=k; k===questions[idx].correct?(bestStreak=Math.max(bestStreak,++streak)):(streak=0); render();}
+prevB.onclick=()=>{idx--;render()};
+nextB.onclick=()=>{idx++;render()};
+finB.onclick=endQuiz;
+
+/*****************************************************************/
+/*  ⌛ TICK  */
+/*****************************************************************/
+function tick(){timeLeft--; if(timeLeft<0)return endQuiz(); const m=String(Math.floor(timeLeft/60)).padStart(2,'0'); const s=String(timeLeft%60).padStart(2,'0'); timeLbl.textContent=`${m}:${s}`; ring.style.strokeDashoffset=345-(timeLeft/TIMER_LIMIT)*345;}
+
+/*****************************************************************/
+/*  🏁 END  */
+/*****************************************************************/
+function endQuiz(){clearInterval(timerId); const pts=answers.reduce((s,a,i)=>s+(a===questions[i].correct),0); const spent=TIMER_LIMIT-timeLeft; const name=prompt('Podaj swoje imię:','Anon')||'Anon'; saveScore(name,pts,spent,bestStreak); scoreL.textContent=`${pts}/${questions.length} | czas ${Math.floor(spent/60)}:${String(spent%60).padStart(2,'0')} | streak ${bestStreak}`; overlay.style.display='flex'; confetti();}
+
+/*****************************************************************/
+/*  💾 SCORE  */
+/*****************************************************************/
+function saveScore(name,p,t,s){const k='board_'+currentCat.id; const b=JSON.parse(localStorage.getItem(k)||'[]'); b.push({name,points:p,time:t,streak:s,date:Date.now()}); localStorage.setItem(k,JSON.stringify(b)); localStorage.setItem('tmp_name',name); localStorage.setItem('tmp_pts',`${p}/${questions.length}`); localStorage.setItem('tmp_time',Math.floor(t/60)+':'+String(t%60).padStart(2,'0'));}
+
+/*****************************************************************/
+/*  🎉 CONFETTI  */
+/*****************************************************************/
+function confetti(){const box=$('#confetti'); box.innerHTML=''; const colors=['#00bcd4','#ff4081','#ffc107','#8bc34a','#ff5722']; for(let i=0;i<160;i++){const d=document.createElement('div'); d.className='paper'; d.style.background=colors[i%colors.length]; d.style.width=d.style.height=Math.random()*8+6+'px'; d.style.left=Math.random()*100+'vw'; d.style.animationDelay=Math.random()*0.35+'s'; d.style.animationDuration=3+Math.random()*1.8+'s'; box.append(d);} setTimeout(()=>box.innerHTML='',6500);
+}
+
+/*****************************************************************/
+/*  🌙 THEME  */
+/*****************************************************************/
+function toggleTheme(forceDark=false){const r=document.documentElement; const dark=forceDark||!r.hasAttribute('data-theme'); dark?r.setAttribute('data-theme','dark'):r.removeAttribute('data-theme'); themeToggle.textContent=dark?'☀':'🌙';}
+
+/*****************************************************************/
+/*  🔀 UTILS  */
+/*****************************************************************/
+function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+</script>
+</body>
+</html>

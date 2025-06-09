@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ranking</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style> /* styl CSS*/
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #f0f4f8, #d9e2ec);
+      margin: 0;
+      padding: 2rem;
+      text-align: center;
+      color: #333;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: #1f2937;
+    }
+
+    #cat {
+      font-size: 1rem;
+      padding: 0.5rem 1rem;
+      margin-bottom: 2rem;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      background: white;
+    }
+
+    table {
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto 2rem;
+      border-collapse: collapse;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    th, td {
+      padding: 1rem;
+      text-align: center;
+    }
+
+    thead {
+      background-color: #3b82f6;
+      color: white;
+    }
+
+    tbody tr:nth-child(even) {
+      background-color: #f9fafb;
+    }
+
+    tbody tr:nth-child(odd) {
+      background-color: #ffffff;
+    }
+
+    tbody tr:nth-child(1) td {
+      background-color: #facc15;
+      font-weight: 600;
+    }
+
+    tbody tr:nth-child(2) td {
+      background-color: #e5e7eb;
+      font-weight: 600;
+    }
+
+    tbody tr:nth-child(3) td {
+      background-color: #c084fc;
+      font-weight: 600;
+    }
+
+    a {
+      text-decoration: none;
+      color: #2563eb;
+      font-weight: 500;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <h1>Tablica wyników</h1>
+  <select id="cat"></select>
+  <table id="board">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Imię</th>
+        <th>Punkty</th>
+        <th>Czas</th>
+        <th>Streak</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+  <a href="index.html">← Wróć do quizu</a>
+
+  <script>
+    const catSel = document.getElementById('cat'), tbody = document.querySelector('tbody');
+    ['prawo_jazdy','egzamin_it','historia_pl'].forEach(id => {
+      catSel.add(new Option(id.replace('_',' ').toUpperCase(), id));
+    });
+    catSel.onchange = render;
+    render();
+
+    function render() {
+      const board = JSON.parse(localStorage.getItem('board_' + catSel.value) || '[]')
+        .sort((a, b) => b.points - a.points || a.time - b.time)
+        .slice(0, 20);
+
+      tbody.innerHTML = '';
+      board.forEach((r, i) => {
+        const row = tbody.insertRow();
+        row.innerHTML = `
+          <td>${i + 1}</td>
+          <td>${r.name}</td>
+          <td>${r.points}</td>
+          <td>${fmt(r.time)}</td>
+          <td>${r.streak}</td>
+        `;
+      });
+    }
+
+    function fmt(sec) {
+      return Math.floor(sec / 60) + ':' + String(sec % 60).padStart(2, '0');
+    }
+  </script>
+</body>
+</html>

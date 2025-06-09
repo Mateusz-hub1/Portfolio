@@ -1,0 +1,231 @@
+{
+  "id": "egzamin_it",
+  "title": "Egzamin INF.02 – test",
+  "questions": [
+    {
+      "q": "Jaki system plików jest domyślnie używany przez system Windows?",
+      "A": "FAT32",
+      "B": "NTFS",
+      "C": "EXT4",
+      "D": "exFAT",
+      "correct": "B",
+      "media": { "type": "img", "src": "media/egzamin_it/qo1.jpg" }
+    },
+    {
+      "q": "Jakie rozszerzenie posiada plik arkusza kalkulacyjnego programu Excel?",
+      "A": ".docx",
+      "B": ".xlsx",
+      "C": ".pptx",
+      "D": ".accdb",
+      "correct": "B",
+      "media": { "type": "img", "src": "media/egzamin_it/qo2.jpg" }
+    },
+    {
+      "q": "Polecenie `ipconfig` w systemie Windows służy do:",
+      "A": "Zarządzania plikami",
+      "B": "Sprawdzania konfiguracji sieci",
+      "C": "Instalacji sterowników",
+      "D": "Uruchamiania usług",
+      "correct": "B",
+      "media": { "type": "img", "src": "media/egzamin_it/qo3.jpg" }
+    },
+    {
+      "q": "W języku HTML element `<a>` służy do:",
+      "A": "Tworzenia tabel",
+      "B": "Łączenia z innymi stronami",
+      "C": "Wyświetlania obrazu",
+      "D": "Wstawiania nagłówka",
+      "correct": "B",
+      "media": { "type": "img", "src": "media/egzamin_it/qo4.jpg" }
+    },
+    {
+      "q": "Które rozszerzenie pliku oznacza skrypt PHP?",
+      "A": ".ph",
+      "B": ".php",
+      "C": ".pph",
+      "D": ".phtmlx",
+      "correct": "B",
+      "media": { "type": "img", "src": "media/egzamin_it/qo5.jpg" }
+    },
+    {
+      "q": "Które polecenie w Linuxie pokazuje aktualny katalog?",
+      "A": "ls",
+      "B": "pwd",
+      "C": "cd",
+      "D": "mkdir",
+      "correct": "B",
+      "media": { "type": "img", "src": "media/egzamin_it/qo6.jpg" }
+    },
+    {
+      "q": "Która funkcja w Excelu służy do sumowania wartości?",
+      "A": "=IF()",
+      "B": "=SUM()",
+      "C": "=ADD()",
+      "D": "=TOTAL()",
+      "correct": "B",
+      "media": { "type": "img", "src": "media/egzamin_it/qo2.jpg" }
+    },
+    {
+      "q": "W bazach danych SQL polecenie `SELECT` służy do:",
+      "A": "Tworzenia bazy",
+      "B": "Usuwania tabeli",
+      "C": "Pobierania danych",
+      "D": "Aktualizacji struktury",
+      "correct": "C",
+      "media": { "type": "img", "src": "media/egzamin_it/qo8.jpg" }
+    },
+    {
+      "q": "Który z wymienionych to adres IP w wersji 4?",
+      "A": "192.168.0.1",
+      "B": "fe80::1ff:fe23:4567:890a",
+      "C": "http://localhost",
+      "D": "255.255",
+      "correct": "A",
+      "media": { "type": "img", "src": "media/egzamin_it/qo9.jpg" }
+    },
+    {
+      "q": "Które z poniższych jest przykładem systemu operacyjnego typu Linux?",
+      "A": "Ubuntu",
+      "B": "Windows 11",
+      "C": "macOS",
+      "D": "FreeDOS",
+      "correct": "A",
+      "media": { "type": "img", "src": "media/egzamin_it/qo10.jpg" }
+    },
+    {
+      "q": "Które polecenie służy do tworzenia folderu w systemie Linux?",
+      "A": "rm",
+      "B": "cd",
+      "C": "mkdir",
+      "D": "touch",
+      "correct": "C",
+      "media": { "type": "img", "src": "media/egzamin_it/qo11.jpg" }
+    },
+    {
+      "q": "Do czego służy tag `<img>` w HTML?",
+      "A": "Wstawiania filmów",
+      "B": "Tworzenia tabelek",
+      "C": "Wstawiania obrazu",
+      "D": "Tworzenia formularzy",
+      "correct": "C",
+      "media": { "type": "img", "src": "media/egzamin_it/qo12.jpg" }
+    },
+    {
+      "q": "Co oznacza skrót CSS?",
+      "A": "Custom Script System",
+      "B": "Computer Style Sheet",
+      "C": "Cascading Style Sheets",
+      "D": "Control Style Set",
+      "correct": "C",
+      "media": { "type": "img", "src": "media/egzamin_it/qo13.jpg" }
+    },
+    {
+      "q": "Aby zapisać plik w Notatniku, używamy skrótu klawiaturowego:",
+      "A": "Ctrl + S",
+      "B": "Ctrl + P",
+      "C": "Alt + S",
+      "D": "Shift + S",
+      "correct": "A",
+      "media": { "type": "img", "src": "media/egzamin_it/qo14.jpg" }
+    },
+    {
+      "q": "Co robi funkcja `echo` w języku PHP?",
+      "A": "Odczytuje plik",
+      "B": "Zapisuje dane do bazy",
+      "C": "Wyświetla tekst",
+      "D": "Uruchamia sesję",
+      "correct": "C",
+      "media": { "type": "img", "src": "media/egzamin_it/qo15.jpg" }
+    },
+    {
+      "q": "W której jednostce mierzy się szybkość transferu danych w sieci?",
+      "A": "GB",
+      "B": "mA",
+      "C": "Mbps",
+      "D": "FPS",
+      "correct": "C",
+      "media": { "type": "img", "src": "media/egzamin_it/qo16.jpg" }
+    },
+    {
+      "q": "Które rozszerzenie oznacza plik bazy danych Microsoft Access?",
+      "A": ".accdb",
+      "B": ".mdbx",
+      "C": ".dbs",
+      "D": ".xls",
+      "correct": "A",
+      "media": { "type": "img", "src": "media/egzamin_it/qo17.jpg" }
+    },
+    {
+      "q": "Która z usług jest najczęściej wykorzystywana do wysyłania e-maili?",
+      "A": "FTP",
+      "B": "HTTP",
+      "C": "SMTP",
+      "D": "SSH",
+      "correct": "C",
+      "media": { "type": "img", "src": "media/egzamin_it/qo18.jpg" }
+    },
+    {
+      "q": "Jakie polecenie w systemie Windows służy do formatowania dysku?",
+      "A": "clean",
+      "B": "erase",
+      "C": "format",
+      "D": "diskpart",
+      "correct": "C",
+      "media": { "type": "img", "src": "media/egzamin_it/qo3.jpg" }
+    },
+    {
+      "q": "Kto odpowiada za ochronę danych w firmie?",
+      "A": "Księgowy",
+      "B": "Inspektor BHP",
+      "C": "Administrator IT",
+      "D": "Ochroniarz",
+      "correct": "C",
+      "media": { "type": "img", "src": "media/egzamin_it/qo20.jpg" }
+    },
+    {
+      "q": "W jakim języku pisze się zapytania do relacyjnych baz danych?",
+      "A": "PHP",
+      "B": "HTML",
+      "C": "SQL",
+      "D": "CSS",
+      "correct": "C",
+      "media": { "type": "img", "src": "media/egzamin_it/qo21.jpg" }
+    },
+    {
+      "q": "Jaką przeglądarką NIE jest?",
+      "A": "Chrome",
+      "B": "Edge",
+      "C": "Firefox",
+      "D": "Linux",
+      "correct": "D",
+      "media": { "type": "img", "src": "media/egzamin_it/qo22.jpg" }
+    },
+    {
+      "q": "Jakie rozszerzenie mają style CSS?",
+      "A": ".cs",
+      "B": ".css",
+      "C": ".style",
+      "D": ".scss",
+      "correct": "B",
+      "media": { "type": "img", "src": "media/egzamin_it/qo23.jpg" }
+    },
+    {
+      "q": "Jaki jest domyślny port dla HTTP?",
+      "A": "20",
+      "B": "22",
+      "C": "80",
+      "D": "443",
+      "correct": "C",
+      "media": { "type": "img", "src": "media/egzamin_it/qo4.jpg" }
+    },
+    {
+      "q": "Które polecenie tworzy nowy plik tekstowy w systemie Linux?",
+      "A": "nano nowy.txt",
+      "B": "vi nowy.txt",
+      "C": "touch nowy.txt",
+      "D": "mkdir nowy.txt",
+      "correct": "C",
+      "media": { "type": "img", "src": "media/egzamin_it/qo25.jpg" }
+    }
+  ]
+}
