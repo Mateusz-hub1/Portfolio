@@ -1,6 +1,6 @@
-# 🧠 Mateusz Połacik – Portfolio
+#  Mateusz Połacik – Portfolio
 
-Witaj w moim repozytorium z projektami! 👋  
+Witaj w moim repozytorium z projektami! 
 Znajdziesz tutaj moje pierwsze prace z zakresu front-endu oraz Pythona, które rozwijam jako student informatyki i pasjonat cyberbezpieczeństwa.
 
 ## 🔍 Spis projektów
