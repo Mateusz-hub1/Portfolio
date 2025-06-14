@@ -1,0 +1,9 @@
+# Ignoruj pliki systemowe macOS
+.DS_Store
+
+# Ignoruj logi
+model AI/error_log.txt
+
+# Ignoruj pliki IDE (np. IntelliJ, PyCharm)
+.idea/
+*.iml
