@@ -1,15 +1,9 @@
-<!-- =========================================================
-  IQ° QUIZ – SINGLE‑FILE EDITION 2.0
-  • Dark Mode 💡   • Kołowy Timer 🕒   • Konfetti 🎉
-  Wszystko w jednym HTML-u – wklej, odpal Live Server i graj.
-  👉  Jeśli dodajesz nowe kategorie, dorzuć json do folderu /data
-========================================================= -->
 <!DOCTYPE html>
 <html lang="pl">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-<title>Piotr Korcz - quiz </title>
+<title>QUIZ </title>
 <!-- Favicon (1×1 transparent) żeby uciszyć 404 → można podmienić -->
 <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnLz4=" />
 <!-- Font – Inter 400/700 -->
@@ -20,7 +14,7 @@
 
 <body>
 <header>
-  <h1 id="logo">Piotr Korcz - quiz </h1>
+  <h1 id="logo">QUIZ </h1>
   <button id="themeToggle" aria-label="Toggle dark mode">🌙</button>
 </header>
 
@@ -61,13 +55,13 @@ const TIMER_LIMIT = 25*60;              // 25 minut w sekundach
 const FILES = ['prawo_jazdy','egzamin_it','historia_pl'];
 
 /*****************************************************************/
-/*  ⚙️  ZMIENNE  */
+/*    ZMIENNE  */
 /*****************************************************************/
 let categories={}, currentCat, questions=[], idx=0;
 let answers=[], timerId=null, streak=0, bestStreak=0, timeLeft=TIMER_LIMIT;
 
 /*****************************************************************/
-/*  📦  ELEM HELPERS  */
+/*  ELEM HELPERS  */
 /*****************************************************************/
 const $=q=>document.querySelector(q);
 const selCat=$('#categorySelect'), card=$('#quizCard');
@@ -78,7 +72,7 @@ const overlay=$('#overlay'), scoreL=$('#scoreLine');
 const themeToggle=$('#themeToggle');
 
 /*****************************************************************/
-/*  🚀 INIT  */
+/*  INIT  */
 /*****************************************************************/
 (async()=>{
   try{
@@ -96,7 +90,7 @@ if(matchMedia('(prefers-color-scheme: dark)').matches)toggleTheme(true);
 themeToggle.onclick=()=>toggleTheme();
 
 /*****************************************************************/
-/*  ▶️ START  */
+/*  START  */
 /*****************************************************************/
 function startQuiz(){
   currentCat=categories[selCat.value];
@@ -108,7 +102,7 @@ function startQuiz(){
 }
 
 /*****************************************************************/
-/*  🔄 RENDER  */
+/*   RENDER  */
 /*****************************************************************/
 function render(){
   const Q=questions[idx]; qTxt.textContent=Q.q;
@@ -151,7 +145,7 @@ for (const k of ['A', 'B', 'C', 'D']) {
 }
 
 /*****************************************************************/
-/*  ✅ CHOICE  */
+/*   CHOICE  */
 /*****************************************************************/
 function choose(k){answers[idx]=k; k===questions[idx].correct?(bestStreak=Math.max(bestStreak,++streak)):(streak=0); render();}
 prevB.onclick=()=>{idx--;render()};
@@ -159,33 +153,33 @@ nextB.onclick=()=>{idx++;render()};
 finB.onclick=endQuiz;
 
 /*****************************************************************/
-/*  ⌛ TICK  */
+/*   TICK  */
 /*****************************************************************/
 function tick(){timeLeft--; if(timeLeft<0)return endQuiz(); const m=String(Math.floor(timeLeft/60)).padStart(2,'0'); const s=String(timeLeft%60).padStart(2,'0'); timeLbl.textContent=`${m}:${s}`; ring.style.strokeDashoffset=345-(timeLeft/TIMER_LIMIT)*345;}
 
 /*****************************************************************/
-/*  🏁 END  */
+/*   END  */
 /*****************************************************************/
 function endQuiz(){clearInterval(timerId); const pts=answers.reduce((s,a,i)=>s+(a===questions[i].correct),0); const spent=TIMER_LIMIT-timeLeft; const name=prompt('Podaj swoje imię:','Anon')||'Anon'; saveScore(name,pts,spent,bestStreak); scoreL.textContent=`${pts}/${questions.length} | czas ${Math.floor(spent/60)}:${String(spent%60).padStart(2,'0')} | streak ${bestStreak}`; overlay.style.display='flex'; confetti();}
 
 /*****************************************************************/
-/*  💾 SCORE  */
+/*   SCORE  */
 /*****************************************************************/
 function saveScore(name,p,t,s){const k='board_'+currentCat.id; const b=JSON.parse(localStorage.getItem(k)||'[]'); b.push({name,points:p,time:t,streak:s,date:Date.now()}); localStorage.setItem(k,JSON.stringify(b)); localStorage.setItem('tmp_name',name); localStorage.setItem('tmp_pts',`${p}/${questions.length}`); localStorage.setItem('tmp_time',Math.floor(t/60)+':'+String(t%60).padStart(2,'0'));}
 
 /*****************************************************************/
-/*  🎉 CONFETTI  */
+/*   CONFETTI  */
 /*****************************************************************/
 function confetti(){const box=$('#confetti'); box.innerHTML=''; const colors=['#00bcd4','#ff4081','#ffc107','#8bc34a','#ff5722']; for(let i=0;i<160;i++){const d=document.createElement('div'); d.className='paper'; d.style.background=colors[i%colors.length]; d.style.width=d.style.height=Math.random()*8+6+'px'; d.style.left=Math.random()*100+'vw'; d.style.animationDelay=Math.random()*0.35+'s'; d.style.animationDuration=3+Math.random()*1.8+'s'; box.append(d);} setTimeout(()=>box.innerHTML='',6500);
 }
 
 /*****************************************************************/
-/*  🌙 THEME  */
+/*   THEME  */
 /*****************************************************************/
 function toggleTheme(forceDark=false){const r=document.documentElement; const dark=forceDark||!r.hasAttribute('data-theme'); dark?r.setAttribute('data-theme','dark'):r.removeAttribute('data-theme'); themeToggle.textContent=dark?'☀':'🌙';}
 
 /*****************************************************************/
-/*  🔀 UTILS  */
+/*   UTILS  */
 /*****************************************************************/
 function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
 </script>
