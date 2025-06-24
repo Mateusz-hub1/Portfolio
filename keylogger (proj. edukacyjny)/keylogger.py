@@ -1,14 +1,3 @@
-"""
-EDUKACYJNY KEYLOGGER  🕵️
-• loguje naciśnięcia klawiszy do pliku 
-• co określony czas / liczbę klawiszy wysyła porcję logu do Google Sheets
-
-Autor: Mateusz Połacik
-Repo:  https://github.com/<twoje-repo>
-
-!!! PROJEKT WYŁĄCZNIE DO CELÓW EDUKACYJNYCH !!!
-"""
-
 import os
 import time
 import threading
