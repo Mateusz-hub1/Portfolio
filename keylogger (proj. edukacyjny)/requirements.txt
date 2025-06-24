@@ -1,0 +1,12 @@
+# ─── Kluczowe biblioteki ─────────────────────────────
+pynput>=1.7,<2.0                       # rejestrowanie klawiszy
+gspread>=6.0,<7.0                      # obsługa Google Sheets
+google-auth>=2.28,<3.0                 # autoryzacja konta usługi Google
+google-api-python-client>=2.126,<3.0   # zależność gspread (pinowana)
+
+# ─── Komfort i bezpieczeństwo ─────────────────────────
+python-dotenv>=1.0,<2.0             # ładowanie zmiennych z pliku .env
+cryptography>=42.0,<43.0            # (opcjonalnie) szyfrowanie lokalnych logów
+
+# ─── Debug i logowanie ────────────────────────────────
+colorlog>=6.8,<7.0                 # kolorowe logi w konsoli (ładniejsze debugowanie)
