@@ -1,51 +1,71 @@
-# Keylogger z zapisem do Google Sheets
+# Keylogger z integracją Google Sheets (Python)
 
-Ten projekt to edukacyjny keylogger napisany w Pythonie, który rejestruje naciśnięcia klawiszy i zapisuje je do arkusza Google Sheets za pomocą API. Działa w środowisku wirtualnym, z obsługą szyfrowania lokalnych logów oraz buforowaniem.
+Ten projekt to keylogger napisany w Pythonie, umożliwiający rejestrowanie naciśnięć klawiszy i ich zapisywanie:
+- lokalnie do pliku tekstowego (`keylog.txt`)
+- zdalnie do arkusza Google Sheets
 
-## Wymagania
+Obsługuje szyfrowanie danych (`Fernet`) oraz pełną konfigurację przez plik `.env`.
 
-- Python 3.8+
-- Połączenie z internetem
-- Utworzone konto serwisowe w Google Cloud z dostępem do Google Sheets API
-- Plik `service_account.json` pobrany z Google Cloud Console
-- Arkusz Google Sheets udostępniony temu kontu
+---
 
-## Instalacja
+## 🧩 Funkcje
 
-1. Sklonuj repozytorium lub pobierz pliki:
+- Rejestruje znaki wpisywane z klawiatury w czasie rzeczywistym
+- Flush co `N` znaków lub `X` sekund
+- Obsługa znaków specjalnych (spacja, enter, tab)
+- Zapisuje dane lokalnie (z opcjonalnym szyfrowaniem)
+- Wysyła dane do wskazanego arkusza Google
+- W pełni konfigurowalny przez `.env`
 
-git clone https://github.com/twoj-uzytkownik/keylogger.git
-cd keylogger
+---
 
-	2.	Utwórz i aktywuj środowisko wirtualne:
+## ⚙️ Konfiguracja `.env`
 
-python3 -m venv venv
-source venv/bin/activate
+Przykład pliku `.env`:
 
-	3.	Zainstaluj zależności:
+```dotenv
+SERVICE_ACCOUNT_FILE=service_account.json
+SPREADSHEET_ID=your_google_spreadsheet_id
+WORKSHEET_NAME=Arkusz1
 
+DURATION_S=60
+FLUSH_EVERY_N_KEYS=10
+FLUSH_EVERY_SEC=30
+
+LOG_FILE=keylog.txt
+```
+# Do szyfrowania (opcjonalnie)
+FERNET_KEY=b'ZAKODOWANY_KLUCZ_BASE64'
+
+⸻
+
+ Uruchomienie
+1.	Zainstaluj zależności:
 pip install -r requirements.txt
+2.	Przygotuj plik .env na podstawie powyższego przykładu.
+ 
+ 3.	Uruchom:
+		python keylogger.py
 
-	4.	Utwórz plik .env na podstawie wzoru .env.example:
 
-cp .env.example .env
 
-Uzupełnij plik .env danymi:
-	•	SERVICE_ACCOUNT_FILE – ścieżka do pliku JSON z Google Cloud
-	•	SPREADSHEET_ID – ID arkusza z URL Google Sheets
-	•	WORKSHEET_NAME – nazwa zakładki (np. Arkusz1)
-	•	FERNET_KEY – klucz szyfrujący (opcjonalny)
-	•	DURATION_S, FLUSH_EVERY_N_KEYS, FLUSH_EVERY_SEC – parametry działania
+Po zakończeniu działania (DURATION_S) dane zostaną zapisane lokalnie i opcjonalnie przesłane do Google Sheets.
 
-Uruchomienie programu
+⸻
 
-W aktywnym środowisku:
+ Szyfrowanie
 
-python keylogger_cloud.py
+Aby włączyć szyfrowanie lokalnego pliku:
+	1.	Wygeneruj klucz:
 
-Logi z naciśnięć będą przesyłane do wskazanego arkusza Google Sheets.
+from cryptography.fernet import Fernet
+print(Fernet.generate_key())
 
-Uwagi
 
-Projekt ma charakter wyłącznie edukacyjny. Nie należy wykorzystywać go bez wyraźnej zgody właściciela systemu docelowego. Wszelkie działania należy prowadzić zgodnie z obowiązującym prawem.
+	2.	Wstaw go do .env jako FERNET_KEY.
 
+⸻
+
+ Zastrzeżenie
+
+Projekt służy wyłącznie do celów edukacyjnych i testowych. Używanie go bez wyraźnej zgody użytkownika końcowego może być nielegalne. Autor nie ponosi odpowiedzialności za sposób wykorzystania tego kodu.
