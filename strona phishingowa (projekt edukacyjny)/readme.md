@@ -54,11 +54,11 @@ Strona zawiera pełne wsparcie dla ekranów mobilnych (media queries), co pozwal
 
 ⸻
 
-🛑 Ważne
+# Zastrzeżenia
 
 Ten projekt nie służy do atakowania użytkowników. Nie zawiera funkcji ukrywania, replikowania domen czy omijania zabezpieczeń. Może być wykorzystywany wyłącznie w celach:
 	•	demonstracyjnych (np. na szkoleniach z cyberbezpieczeństwa),
 	•	testowych (np. jako honeypot UI),
 	•	edukacyjnych (np. do analizy ataków phishingowych).
-
+Jako autor nie ponosze odpowiedzialności za wykorzystanie strony nie zgodnie z prawem lub w nieetycznych celach.
 ⸻
