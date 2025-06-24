@@ -5,9 +5,11 @@ Cześć! Jestem Mateusz Połacik – student informatyki oraz pasjonat technolog
 ## O mnie
 
 Studiuję informatykę i aktywnie rozwijam się w obszarach takich jak:
+```
 	•	🛡️ Cyberbezpieczeństwo
 	•	🤖 Sztuczna Inteligencja i uczenie maszynowe
 	•	🌐 Tworzenie interaktywnych stron internetowych
+```
 
 ⸻
 
@@ -63,7 +65,7 @@ Cel: Automatyzacja i wsparcie analizy bezpieczeństwa.
 
 ⸻
 
-## 6.  Aplikacja z quizami
+## 6.  Aplikacja z quizami (quiz)
 
 Opis: Interaktywna aplikacja quizowa z obsługą wielu kategorii, timerem i trybem ciemnym.
 
