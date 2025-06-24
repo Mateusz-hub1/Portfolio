@@ -43,8 +43,8 @@ python3 nazwa.py
 
 ⸻
 
-Zastrzeżenie
+## Zastrzeżenie
 
-Projekt ma charakter edukacyjny. Symuluje zachowanie ransomware lokalnie na plikach testowych. Nie zawiera żadnych mechanizmów ukrywania się, infekowania systemu ani realnych technik złośliwego oprogramowania. Całość działa transparentnie – klucz nie jest ukrywany przed użytkownikiem.
+Projekt ma charakter edukacyjny. Symuluje zachowanie ransomware lokalnie na plikach testowych. Nie zawiera żadnych mechanizmów ukrywania się, infekowania systemu ani realnych technik złośliwego oprogramowania. Całość działa transparentnie – klucz nie jest ukrywany przed użytkownikiem. Jako autor nie ponosze odpowiedzialności za nieprawidłowe lub nieetyczne wykorzystanie programu.
 
 ⸻
