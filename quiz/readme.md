@@ -15,22 +15,6 @@ Interaktywny system quizowy działający w przeglądarce, napisany w HTML, CSS i
 
 ---
 
-##  Struktura katalogu
-
-├── index.html              ← Główna strona z quizem
-├── results.html            ← Lokalna tabela wyników (ranking)
-├── readme.md
-├── app.js                  ← Logika quizu
-├── style.css               ← Stylizacja (w tym tryb ciemny)
-├── sw.js                   ← Service Worker (opcjonalnie dla PWA/offline)
-├── media/                  ← Pliki multimedialne (obrazki, wideo)
-├── data/
-│   ├── egzamin_it.json
-│   ├── historia_pl.json
-│   └── prawo_jazdy.json    ← Kategorie quizów
-
----
-
 ##  Uruchomienie lokalne
 
     1. Sklonuj repozytorium:
@@ -58,5 +42,3 @@ const FILES = ['prawo_jazdy', 'egzamin_it', 'historia_pl', 'chemia'];
 Wszystkie dane użytkownika (imię, wynik, czas, streak) są zapisywane lokalnie w localStorage. Strona nie przesyła żadnych danych na zewnątrz.
 
 ⸻
-
-Chcesz też wersję angielską lub screenshoty + badge’y (`HTML5`, `JS`, `Offline Ready`, itp.) do dekoracji README? Albo gotowy plik `manifest.json`, by zrobić z tego PWA?
