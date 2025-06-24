@@ -74,6 +74,3 @@ Chciałem przetestować praktyczne połączenie interfejsu AI z zadaniami typowo
 
 Projekt jest edukacyjny. Nie służy do przeprowadzania nieautoryzowanych testów penetracyjnych ani nie powinien być wykorzystywany w sposób sprzeczny z prawem.
 
----
-
-Jeśli chcesz, mogę też dorzucić `requirements.txt`, mockowe `logi.csv`, grafikę GUI do README albo dodać badge'y (`python version`, `license`, `stars`, itd.). Daj znać, co dalej!
