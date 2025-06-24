@@ -1,4 +1,4 @@
-##Ransomware – edukacyjny projekt szyfrowania plików
+#  Ransomware – edukacyjny projekt szyfrowania plików
 
 Ten projekt to prosty, lokalny symulator ransomware napisany w Pythonie. Program szyfruje pliki w zadanym folderze przy użyciu algorytmu `Fernet` z biblioteki `cryptography`, generuje ransomenote, a następnie umożliwia wprowadzenie klucza deszyfrującego. Dodatkowo, dane szyfrowania (ID + klucz) wysyłane są do Google Sheets przez Google Apps Script.
 
