@@ -1,115 +1,96 @@
-Pewnie! Oto przykładowy plik `README.md` dla Twojego projektu rozpoznawania gestów dłoni przy użyciu sieci neuronowej i danych z plików `.csv`, oparty na bibliotece Keras i MediaPipe:
+#  Rozpoznawanie Gestów Dłoni z Siecią Neuronową (TensorFlow + MediaPipe)
+
+Projekt ten umożliwia rozpoznawanie gestów dłoni na podstawie danych 3D punktów z MediaPipe i klasyfikuje je za pomocą sieci neuronowej. Uczy się na danych z plików CSV i może być rozszerzony do obsługi gestów w czasie rzeczywistym.
 
 
-# Uruchomienie programu (w srodwisku wirtualnym)
-Linux/ mac: (wirtualnie)
+---
+
+##  Szybki start
+
+### 1. Utwórz i aktywuj środowisko wirtualne (Linux/macOS):
 python3 -m venv venv
 source venv/bin/activate
 
-# instalacja niezbednych bibliotek 
+### 2. Zainstaluj zależności:
 pip install -r requirements.txt
 
+### 3. Wytrenuj model:
+python utils/train_model.py
 
-# 🤖 Hand Gesture Recognition with Neural Network
+Model zostanie zapisany jako: model/gesture_model.keras
 
-Projekt rozpoznawania gestów dłoni w czasie rzeczywistym przy użyciu sieci neuronowej i danych przestrzennych punktów dłoni (MediaPipe). Model uczy się rozpoznawać różne gesty ręki na podstawie współrzędnych 3D i klasyfikuje je do jednej z kilkunastu zdefiniowanych kategorii.
+⸻
 
-## 🧠 O projekcie
+## O projekcie
+	•	 Uczy się 63 cech (21 punktów dłoni × 3 wymiary: x, y, z)
+	•	 Dane treningowe w formacie CSV (training_data/)
+	•	 Możliwość łatwego rozszerzenia o nowy gest
+	•	 Zaprojektowane z myślą o kontroli ruchem, grach i interfejsach bezdotykowych
 
-Celem projektu jest stworzenie prostego, ale skutecznego systemu rozpoznawania gestów, który może być używany do:
+⸻
 
-- sterowania aplikacjami,
-- interfejsów użytkownika bezdotykowych (touchless UI),
-- wsparcia dla osób z niepełnosprawnościami,
-- zabawy lub gier opartych na gestach.
-
-Model został wytrenowany na danych zapisanych w plikach `.csv`, które zawierają 63 cechy (21 punktów dłoni * 3 współrzędne: x, y, z).
-
-## 📁 Struktura projektu
-
+## Rozpoznawane gesty
+```bash
+Nazwa	Opis
+fist	👊 Pięść
+open	✋ Otwarta dłoń
+victory	✌️ Zwycięstwo
+rock	🤘 Rock
+point	☝️ Wskazujący palec
+Spock	🖖 Spock
+CallMe	🤙 Call me
+TwoFingerPoint	✌️✌️ Dwa palce wskazujące
+ThumbToPoint	👆 Kciuk → wskazujący
+ThumbToMiddle	👉 Kciuk → środkowy
+middleFinger	🖕 Środkowy palec
 ```
 
-gesty/
-├── model/                      # Zapisany model .keras
-├── training\_data/             # Pliki CSV z danymi dla każdego gestu
-│   ├── data\_fist.csv
-│   ├── data\_open.csv
+⸻
+
+🗂️ Struktura projektu
+```bash
+.
+├── model/
+│   └── gesture_model.keras
+├── training_data/
+│   ├── data_fist.csv
+│   ├── data_open.csv
 │   └── ...
 ├── utils/
-│   └── train\_model.py         # Skrypt do trenowania modelu
-├── gesture\_predictor.py       # (opcjonalnie) Klasyfikator do predykcji w czasie rzeczywistym
-└── README.md                  # Niniejszy plik
+│   ├── collect_data.py
+│   ├── gestures_control.py
+│   └── train_model.py
+├── requirements.txt
+└── README.md
+```
 
-````
+⸻
 
-## 🧪 Gesty do rozpoznania
+## Pliki i funkcje
 
-Model rozpoznaje następujące gesty dłoni:
+	•	collect_data.py – Zbieranie punktów dłoni do plików .csv
+	•	train_model.py – Trening modelu Keras
+	•	gestures_control.py – Wykrywanie gestów i kontrolowanie kursora/myszy
 
-1. 👊 Pięść (`fist`)
-2. ✋ Otwarta dłoń (`open`)
-3. ✌️ Zwycięstwo (`victory`)
-4. 🤘 Rock (`rock`)
-5. ☝️ Wskazujący palec (`point`)
-6. 🖖 Spock (`Spock`)
-7. 🤙 Call me (`CallMe`)
-8. ✌️✌️ Dwa palce wskazujące (`TwoFingerPoint`)
-9. 👆 Kciuk do palca wskazującego (`ThumbToPoint`)
-10. 👉 Kciuk do środkowego (`ThumbToMiddle`)
-11. 🖕 Środkowy palec (`middleFinger`)
+⸻
 
-## 🚀 Jak uruchomić
-
-1. **Zainstaluj zależności:**
-
+## Przykład wyników
 ```bash
-pip install -r requirements.txt
-````
+Liczba próbek: 5500
+Liczba cech: 63
+Liczba klas: 11
+Test accuracy: 0.9817
+Model zapisany do model/gesture_model.keras
+```
 
-2. **Trenuj model:**
 
+⸻
+
+## Możliwości rozwoju
 ```bash
-python utils/train_model.py
+	•	Dodanie rozpoznawania gestów na żywo z kamery
+	•	Eksport modelu do TensorFlow Lite (np. na Raspberry Pi)
+	•	Rozszerzenie o alfabet migowy (ASL)
+	•	Stworzenie GUI do testowania
 ```
-
-3. **Model zostanie zapisany do folderu `model/gesture_model.keras`.**
-
-## 🛠️ Technologie
-
-* Python 3.11+
-* TensorFlow / Keras
-* NumPy, Pandas
-* MediaPipe (do generowania danych gestów)
-* scikit-learn (do podziału danych)
-
-## ✅ Przykładowy wynik
-
-```
-Liczba próbek: 5500, liczba cech: 63  
-Liczba klas: 11  
-Test loss: 0.0553, Test accuracy: 0.9817  
-Model wytrenowany i zapisany do model/gesture_model.keras
-```
-
-## 💡 Pomysły na rozwój
-
-* Dodanie kamery i integracja z MediaPipe w czasie rzeczywistym
-* Więcej klas gestów (np. alfabet migowy)
-* Eksport modelu do TensorFlow Lite do użycia na urządzeniach mobilnych
-* Interfejs graficzny (GUI) do demonstracji gestów
-
-## 📄 Licencja
-
-Projekt edukacyjny, open-source — feel free to fork & modify ✌️
-
----
-
-🧠 Autor: \[Twoje imię/nick]
-📅 Data ostatniej aktualizacji: czerwiec 2025
-
-```
-
----
-
-Jeśli chcesz, mogę też przygotować wersję po angielsku, dodać grafikę lub diagram działania. Daj znać!
-```
+⸻
